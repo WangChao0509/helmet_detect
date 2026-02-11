@@ -1,0 +1,13 @@
+# 路径
+path: datasets\helmet
+
+# 训练集
+train: images\train
+# 验证集
+val: images\val
+
+# 类别数
+nc: 2
+
+# 类别名字
+names: ['nohelmet', 'helmet']
