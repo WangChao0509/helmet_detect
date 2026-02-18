@@ -20,7 +20,7 @@
   - `README.md` - 项目说明
   - `requirements.txt` - 环境依赖
   - `scripts` - 推理脚本
-    - `infer.py` - 推理脚本
+    - `infer.py` - 推理脚本（支持视频）
     - `voc2yolo.py` - voc转yolo脚本
   - `config/` - 数据配置目录
     - `helmet.yaml` - 数据集配置
