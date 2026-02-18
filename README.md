@@ -1,7 +1,7 @@
 # 基于yolov8的安全帽检测项目
 
 ## 一、项目简介
-本项目是基于yolov8m预训练模型进行模型的训练，可自动识别图像中人员是否佩戴安全帽。
+本项目是基于yolov8m预训练模型进行模型的训练，可自动识别图像中人员是否佩戴安全帽（分为helmet和nohelmet两类）。
 
 项目主要内容：
 - 数据集准备与格式转换（YOLO格式，附有voc转yolo格式的脚本：voc2yolo.py）
@@ -34,6 +34,9 @@
     - `PR_curve.png` - PR曲线
     - `F1_curve.png` - F1曲线
   - `datasets/` - 数据集目录
-## 三、运行环境
+## 三、结果分析
+- 在验证集上conf为0.453时最佳F1为0.9，两类的Precision和Recall都是0.90+，其中helmet的Precision和Recall都高于nohelmet，mAP@0.5为0.935，mAP@0.5:0.95为0.63。
+- best.pt平均推理速度为22ms,导出为.onnx后平均推理速度为5.4ms，
+## 四、运行环境说明
 python >= 3.8
 安装依赖：pip install -r requirements.txt
