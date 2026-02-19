@@ -41,7 +41,7 @@
 - 在验证集上conf为0.453时最佳F1为0.9，两类的Precision和Recall都是0.90+，其中helmet的Precision和Recall都高于nohelmet，mAP@0.5为0.935，mAP@0.5:0.95为0.63。
 - 在终端上，best.pt单张图片的平均推理速度为25ms（模型未预热）,使用推理脚本进行实时推测时，平均推理速度为5ms（模型预热后）；导出为.onnx后单张图片的平均推理速度为5.4ms。
 ## 四、运行环境与代码说明
-- 本项目python版本为3.9.25。
+- 本项目python版本为3.9.25，best.pt大小为21.4MB。
 - 安装项目依赖：pip install -r requirements.txt
 - 模型训练：yolo detect train data=config/helmet.yaml model=yolov8m.pt imgsz=640 batch=16 epochs=120 device=0
 - 模型验证：yolo detect val model=weights/best.pt data=data/helmet.yaml
