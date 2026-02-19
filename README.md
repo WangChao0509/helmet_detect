@@ -46,6 +46,6 @@
 - 模型训练：yolo detect train data=config/helmet.yaml model=yolov8m.pt imgsz=640 batch=16 epochs=120 device=0
 - 模型验证：yolo detect val model=weights/best.pt data=data/helmet.yaml
 - 模型推理：yolo detect predict model=weights/best.pt source='文件路径' ；或者使用脚本：python infer.py/demo_realtime.py
-- 模型导出：yolo export model=weights/best.pt format=onnx
+- 模型导出：yolo export model=weights/best.pt format=onnx（.onnx模型体积较大，未上传至weights）
 ## 五、模型改进方向
 在实时检测中，离检测摄像头过近时（约1米内），模型有时会将较密的头发误判为安全帽；但在实际正常的检测距离内，检测结果比较稳定。可能原因是模型学习的数据中缺乏相关数据集，样本需要进一步丰富；也可能是近距离情况下头发局部区域在视觉上与安全帽边缘存在一定相似性。改进方向如下：增加未佩戴安全帽的人头负样本，尤其是近距离、多角度样本；调整conf置信度阈值以减少误检；扩充数据集规模并增加训练轮次（epochs），提高模型泛化能力。
