@@ -1,4 +1,4 @@
-# 基于yolov8的安全帽检测项目
+# 基于yolov8的轻量化实时安全帽检测项目
 
 ## 一、项目简介
 本项目是基于yolov8m预训练模型进行模型的训练，可自动识别图像中人员是否佩戴安全帽（分为helmet和nohelmet两类），支持图片、视频和实时监测。
@@ -12,8 +12,9 @@
 - 检测结果保存
 
 适用于：
-- 计算机视觉入门
 - 目标检测项目实战
+- 轻量化目标检测模型部署
+- 智能监控与安全帽佩戴检测
 
 ## 二、项目结构
 - `helmet_detect/` - 项目根目录
@@ -44,7 +45,7 @@
 - 本项目python版本为3.9.25，best.pt大小为21.4MB。
 - 安装项目依赖：pip install -r requirements.txt
 - 模型训练：yolo detect train data=config/helmet.yaml model=yolov8m.pt imgsz=640 batch=16 epochs=120 device=0
-- 模型验证：yolo detect val model=weights/best.pt data=data/helmet.yaml
+- 模型验证：yolo detect val model=weights/best.pt data=config/helmet.yaml
 - 模型推理：yolo detect predict model=weights/best.pt source='文件路径' ；或者使用脚本：python infer.py/demo_realtime.py
 - 模型导出：yolo export model=weights/best.pt format=onnx（.onnx模型体积较大，未上传至weights）
 ## 五、模型改进方向
